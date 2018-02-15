@@ -10,6 +10,24 @@ server.listen(port, function () {
   console.log('Server listening at port %d', port);
 });
 
+app.use((req, res, next) => {
+  if (req.query.static === 'true')   {
+      next();
+  } else {
+    //if(req.query.appid !== process.env.accessKey)
+    if(req.query.appid !== process.env.accessKey) {
+      res.send("you are not authorized to access this link");
+      console.log("you are not authorized to access this link");
+      return "you are not authorized to access this link";
+      
+    } else {
+      console.log("Authorized");
+      next();
+    }
+  }
+  
+ 
+});
 // Routing
 app.use(express.static(path.join(__dirname, 'public')));
 
