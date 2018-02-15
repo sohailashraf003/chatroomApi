@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A simple chat client using socket.io",
   "main": "index.js",
-  "author": "Grant Timmerman",
+  "author": "Sohail Ashraf",
   "private": true,
   "license": "BSD",
   "dependencies": {
@@ -16,6 +16,6 @@
     "socket.io-parser": "~3.1.1"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "npm install && node index.js"
   }
 }
